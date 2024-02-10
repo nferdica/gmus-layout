@@ -1,0 +1,1388 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Formulário</title>
+	<script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body
+	class="w-screen min-h-screen overflow-x-hidden flex flex-col items-center justify-start bg-gray-100 text-gray-900 py-24">
+	<div class="w-11/12 h-full p-4 space-y-2 mx-auto">
+		<!-- Cabeçalho -->
+		<div class="flex flex-col gap-1">
+			<!-- parte 1 -->
+			<div>
+				<h2 class="text-center font-extrabold">SINAN</h2>
+			</div>
+			<!-- parte 2 -->
+			<div class="flex flex-row gap-2">
+				<span class="w-1/5 font-medium text-center text-xs">República Federativa do Brasil Ministério da Saúde</span>
+				<span class="flex-1 text-center font-extrabold">SISTEMA DE INFORMAÇÃO DE AGRAVOS DE NOTIFICAÇÃO <br> FICHA DE
+					INVESTIGAÇÃO
+					DENGUE E
+					FEBRE DE
+					CHIKUNGUNYA</span>
+				<div class="w-1/5 flex items-center gap-1 bg-gray-300 py-1 px-2 rounded-md h-max">
+					<span class="font-semibold">Nº</span>
+					<input class="w-full bg-gray-300 border border-gray-200 px-1 rounded-md" type="text">
+				</div>
+			</div>
+			<!-- parte 3 -->
+			<div class="rounded-md border border-gray-900 p-2">
+				<span>
+					<strong>Caso suspeito de dengue</strong>: pessoa que viva ou tenha viajado nos últimos 14 dias para área
+					onde esteja ocorrendo transmissão de dengue ou tenha presença de Ae.aegypti que apresente febre, usualmente
+					entre 2 e 7 dias, e apresente duas ou mais das seguintes manifestações: náuseas, vômitos, exantema, mialgias,
+					cefaléia, dor retroorbital, petéquias ou prova do laço positiva e leucopenia.
+				</span>
+			</div>
+			<!-- Parte 4 -->
+			<div class="rounded-md border border-gray-900 p-2">
+				<span>
+					<strong>Caso suspeito de Chikungunya</strong>: febre de início súbito e artralgia ou artrite intensa com
+					inicio agudo, não explicado por outras condições, que resida ou tenha viajado para áreas endêmicas ou
+					epidêmicas até 14 dias antes do início dos sintomas, ou que tenha vínculo epidemiológico com um caso importado
+					confirmado.
+				</span>
+			</div>
+		</div>
+		<!-- Formulário -->
+		<form class="space-y-2">
+			<!-- Dados Gerais -->
+			<div class="grid grid-cols-10 gap-x-1 gap-y-2">
+				<!-- Campo - Tipo de Notificação -->
+				<div class="flex flex-col gap-1 col-span-10">
+					<div>
+						<span class="border border-gray-900 px-1 text-sm font-semibold">1</span>
+						<label for="dados-gerais-tipo-notificacao" class="text-sm font-semibold">Tipo de Notificação</label>
+					</div>
+					<input class="border-r border-l border-b border-gray-900 rounded-b-md px-2" type="text"
+						id="dados-gerais-tipo-notificacao" name="dados-gerais-tipo-notificacao">
+				</div>
+				<!-- Campo - Agravo/Doença -->
+				<div class="flex flex-col gap-1 col-span-5">
+					<div>
+						<span class="border border-gray-900 px-1 text-sm font-semibold">2</span>
+						<label for="dados-gerais-agravo-doenca" class="text-sm font-semibold">Agravo/doença</label>
+					</div>
+					<select class="border-r border-l border-b border-gray-900 rounded-b-md px-2" id="dados-gerais-agravo-doenca"
+						name="dados-gerais-agravo-doenca" required>
+						<option value="" selected disabled>Selecione uma opção</option>
+						<option value="dengue">Dengue</option>
+						<option value="chikungunya">Chikungunya</option>
+					</select>
+				</div>
+				<!-- Campo - CID 10 -->
+				<div class="flex flex-col gap-1 col-span-2">
+					<div>
+						<label class="text-sm font-semibold">Código (CID10)</label>
+					</div>
+					<span class="border-r border-l border-b border-gray-900 rounded-b-md px-2">A 90 A 92</span>
+				</div>
+				<!-- Campo - Data da Notificação -->
+				<div class="flex flex-col gap-1 col-span-3">
+					<div>
+						<span class="border border-gray-900 px-1 text-sm font-semibold">3</span>
+						<label for="dados-gerais-data-notificacao" class="text-sm font-semibold">Data de Notificação</label>
+					</div>
+					<input class="border-r border-l border-b border-gray-900 rounded-b-md px-2" type="date"
+						id="dados-gerais-data-notificacao" name="dados-gerais-data-notificacao">
+				</div>
+				<!-- Campo - UF -->
+				<div class="flex flex-col gap-1 col-span-1">
+					<div>
+						<span class="border border-gray-900 px-1 text-sm font-semibold">4</span>
+						<label for="dados-gerais-uf" class="text-sm font-semibold">UF</label>
+					</div>
+					<input class="border-r border-l border-b border-gray-900 rounded-b-md px-2" type="text" id="dados-gerais-uf"
+						name="dados-gerais-uf">
+				</div>
+				<!-- Campo - Município de Notificação -->
+				<div class="flex flex-col gap-1 col-span-7">
+					<div>
+						<span class="border border-gray-900 px-1 text-sm font-semibold">5</span>
+						<label for="dados-gerais-município-notificacao" class="text-sm font-semibold">Município de
+							Notificação</label>
+					</div>
+					<input class="border-r border-l border-b border-gray-900 rounded-b-md px-2" type="text"
+						id="dados-gerais-município-notificacao" name="dados-gerais-município-notificacao">
+				</div>
+				<!-- Campo - Código (IBGE) -->
+				<div class="flex flex-col gap-1 col-span-2">
+					<div>
+						<span class="border border-transparent px-1 text-sm font-semibold"></span>
+						<label for="dados-gerais-codigo-ibge" class="text-sm font-semibold">Código (IBGE)</label>
+					</div>
+					<input class="border-r border-l border-b border-gray-900 rounded-b-md px-2" type="text"
+						id="dados-gerais-codigo-ibge" name="dados-gerais-codigo-ibge">
+				</div>
+				<!-- Campo - Unidade de Saúde (ou outra fonte notificadora) -->
+				<div class="flex flex-col gap-1 col-span-5">
+					<div>
+						<span class="border border-gray-900 px-1 text-sm font-semibold">6</span>
+						<label for="dados-gerais-codigo-unidade-saude" class="text-sm font-semibold">Unidade de Saúde (ou outra
+							fonte notificadora)</label>
+					</div>
+					<input class="border-r border-l border-b border-gray-900 rounded-b-md px-2" type="text"
+						id="dados-gerais-codigo-unidade-saude" name="dados-gerais-codigo-unidade-saude">
+				</div>
+				<!-- Campo - Código -->
+				<div class="flex flex-col gap-1 col-span-2">
+					<div>
+						<span class="border border-transparent px-1 text-sm font-semibold"></span>
+						<label for="dados-gerais-data-notificacao-codigo" class="text-sm font-semibold">Código</label>
+					</div>
+					<input class="border-r border-l border-b border-gray-900 rounded-b-md px-2" type="text"
+						id="dados-gerais-data-notificacao-codigo" name="dados-gerais-data-notificacao-codigo">
+				</div>
+				<!-- Campo - Data dos Primeiros Sintomas -->
+				<div class="flex flex-col gap-1 col-span-3">
+					<div>
+						<span class="border border-gray-900 px-1 text-sm font-semibold">7</span>
+						<label for="dados-gerais-data-primeiro-sintoma" class="text-sm font-semibold">Data dos Primeiros
+							Sintomas</label>
+					</div>
+					<input class="border-r border-l border-b border-gray-900 rounded-b-md px-2" type="date"
+						id="dados-gerais-data-primeiro-sintoma" name="dados-gerais-data-primeiro-sintoma">
+				</div>
+			</div>
+			<!-- Notificação Individual -->
+			<div class="grid grid-cols-10 gap-x-1 gap-y-2">
+				<!-- Campo - Nome do Paciente -->
+				<div class="flex flex-col gap-1 col-span-7">
+					<div>
+						<span class="border border-gray-900 px-1 text-sm font-semibold">8</span>
+						<label for="notificacao-individual-nome-paciente" class="text-sm font-semibold">Nome do Paciente</label>
+					</div>
+					<input class="border-r border-l border-b border-gray-900 rounded-b-md px-2" type="text"
+						id="notificacao-individual-nome-paciente" name="notificacao-individual-nome-paciente">
+				</div>
+				<!-- Campo - Data de Nascimento -->
+				<div class="flex flex-col gap-1 col-span-3">
+					<div>
+						<span class="border border-gray-900 px-1 text-sm font-semibold">9</span>
+						<label for="notificacao-individual-data-nascimento" class="text-sm font-semibold">Data de
+							Nascimento</label>
+					</div>
+					<input class="border-r border-l border-b border-gray-900 rounded-b-md px-2" type="date"
+						id="notificacao-individual-data-nascimento" name="notificacao-individual-data-nascimento">
+				</div>
+				<!-- Campo - (ou) Idade -->
+				<div class="flex flex-col gap-1 col-span-2">
+					<div>
+						<span class="border border-gray-900 px-1 text-sm font-semibold">10</span>
+						<label for="notificacao-individual-idade" class="text-sm font-semibold">(ou) Idade</label>
+					</div>
+					<div class="grid grid-cols-2 gap-x-1">
+						<input class="border-r border-l border-b border-gray-900 rounded-b-md px-2" type="text"
+							id="notificacao-individual-idade" required id="notificacao-individual-idade">
+						<select class="border-r border-l border-b border-gray-900 rounded-b-md px-2"
+							id="notificacao-individual-idade-unidade" required id="notificacao-individual-idade-unidade"
+							name="notificacao-individual-idade-unidade">
+							<option value="" selected disabled>Selecione uma opção</option>
+							<option value="anos">Anos</option>
+							<option value="meses">Meses</option>
+							<option value="dias">Dias</option>
+							<option value="horas">Horas</option>
+						</select>
+					</div>
+				</div>
+				<!-- Campo - Sexo -->
+				<div class="flex flex-col gap-1 col-span-2">
+					<div>
+						<span class="border border-gray-900 px-1 text-sm font-semibold">11</span>
+						<label for="notificacao-individual-sexo" class="text-sm font-semibold">Sexo</label>
+					</div>
+					<select class="border-r border-l border-b border-gray-900 rounded-b-md px-2" id="notificacao-individual-sexo"
+						required id="notificacao-individual-sexo" name="notificacao-individual-sexo">
+						<option value="" selected disabled>Selecione uma opção</option>
+						<option value="masculino">Masculino</option>
+						<option value="feminino">Feminino</option>
+						<option value="ignorado">Ignorado</option>
+					</select>
+				</div>
+				<!-- Campo - Gestante -->
+				<div class="flex flex-col gap-1 col-span-4">
+					<div>
+						<span class="border border-gray-900 px-1 text-sm font-semibold">12</span>
+						<label for="notificacao-individual-gestante" class="text-sm font-semibold">Gestante</label>
+					</div>
+					<select class="border-r border-l border-b border-gray-900 rounded-b-md px-2"
+						id="notificacao-individual-gestante" required id="notificacao-individual-gestante"
+						name="notificacao-individual-gestante">
+						<option value="" selected disabled>Selecione uma opção</option>
+						<option value="1-trimestre">1º Trimestre</option>
+						<option value="2-trimestre">2º Trimestre</option>
+						<option value="3-trimestre">3º Trimestre</option>
+						<option value="idade-gestacional-ignorada">Idade gestacional Ignorada</option>
+						<option value="nao">Não</option>
+						<option value="nao-se-aplica">Não se aplica</option>
+						<option value="ignorado">ignorado</option>
+					</select>
+				</div>
+				<!-- Campo - Raça/Cor -->
+				<div class="flex flex-col gap-1 col-span-2">
+					<div>
+						<span class="border border-gray-900 px-1 text-sm font-semibold">13</span>
+						<label for="notificacao-individual-raca" class="text-sm font-semibold">Raça/Cor</label>
+					</div>
+					<select class="border-r border-l border-b border-gray-900 rounded-b-md px-2" id="notificacao-individual-raca"
+						required id="notificacao-individual-raca" name="notificacao-individual-raca">
+						<option value="" selected disabled>Selecione uma opção</option>
+						<option value="branca">Branca</option>
+						<option value="preta">Preta</option>
+						<option value="amarela">Amarela</option>
+						<option value="parda">Parda</option>
+						<option value="indigena">Indígena</option>
+						<option value="ignorado">Ignorado</option>
+					</select>
+				</div>
+				<!-- Campo - Escolaridade -->
+				<div class="flex flex-col gap-1 col-span-10">
+					<div>
+						<span class="border border-gray-900 px-1 text-sm font-semibold">14</span>
+						<label for="notificacao-individual-gestante" class="text-sm font-semibold">Escolaridade</label>
+					</div>
+					<select class="border-r border-l border-b border-gray-900 rounded-b-md px-2" required
+						id="notificacao-individual-escolaridade" name="notificacao-individual-escolaridade">
+						<option value="" selected disabled>Selecione uma opção</option>
+						<option value="alfabetizado">Alfabetizado</option>
+						<option value="1-4-incompleto">1ª à 4ª série incompleta do EF (antigo primário ou 1º grau)</option>
+						<option value="4-completo">4ª série completa do EF (antigo primário ou 1º grau)</option>
+						<option value="5-8-incompleto">3ª à 8ª série incompleta do EF (antigo ginásio ou 1º grau)</option>
+						<option value="fundamental-completo">Ensino fundamental completo (antigo ginásio ou 1º grau)</option>
+						<option value="medio-incompleto">Ensino médio incompleto (antigo colegial ou 2º grau)</option>
+						<option value="medio-completo">Ensino médio completo (antigo colegial ou 2º grau)</option>
+						<option value="superior-incompleto">Superior incompleto</option>
+						<option value="superior-completo">Superior completo</option>
+						<option value="ignorado">Ignorado</option>
+						<option value="nao-se-aplica">Não se aplica</option>
+					</select>
+				</div>
+			</div>
+			<!-- Dados de Residência -->
+			<div class="grid grid-cols-10 gap-x-1 gap-y-2">
+				<!-- Campo - UF -->
+				<div class="flex flex-col gap-1 col-span-1">
+					<div>
+						<span class="border border-gray-900 px-1 text-sm font-semibold">17</span>
+						<label for="dados-residenciais-uf" class="text-sm font-semibold">UF</label>
+					</div>
+					<input class="border-r border-l border-b border-gray-900 rounded-b-md px-2" type="text"
+						id="dados-residenciais-uf" name="dados-residenciais-uf">
+				</div>
+				<!-- Campo - Município de Residência -->
+				<div class="flex flex-col gap-1 col-span-4">
+					<div>
+						<span class="border border-gray-900 px-1 text-sm font-semibold">18</span>
+						<label for="dados-residenciais-municipio-residencia" class="text-sm font-semibold">Município de
+							Residência</label>
+					</div>
+					<input class="border-r border-l border-b border-gray-900 rounded-b-md px-2" type="text"
+						id="dados-residenciais-municipio-residencia" name="dados-residenciais-municipio-residencia">
+				</div>
+
+				<!-- Campo - Código (IBGE) -->
+				<div class="flex flex-col gap-1 col-span-2">
+					<div>
+						<span class="border border-transparent px-1 text-sm font-semibold"></span>
+						<label for="dados-residenciais-municipio-residencia-codigo-ibge" class="text-sm font-semibold">Código
+							IBGE</label>
+					</div>
+					<input class="border-r border-l border-b border-gray-900 rounded-b-md px-2" type="text"
+						id="dados-residenciais-municipio-residencia-codigo-ibge"
+						name="dados-residenciais-municipio-residencia-codigo-ibge">
+				</div>
+
+				<!-- Campo - Distrito -->
+				<div class="flex flex-col gap-1 col-span-3">
+					<div>
+						<span class="border border-gray-900 px-1 text-sm font-semibold">19</span>
+						<label for="dados-residenciais-distrito" class="text-sm font-semibold">Distrito</label>
+					</div>
+					<input class="border-r border-l border-b border-gray-900 rounded-b-md px-2" type="text"
+						id="dados-residenciais-distrito" name="dados-residenciais-distrito">
+				</div>
+
+				<!-- Campo - Bairro -->
+				<div class="flex flex-col gap-1 col-span-3">
+					<div>
+						<span class="border border-gray-900 px-1 text-sm font-semibold">20</span>
+						<label for="dados-residenciais-bairro" class="text-sm font-semibold">Bairro</label>
+					</div>
+					<input class="border-r border-l border-b border-gray-900 rounded-b-md px-2" type="text"
+						id="dados-residenciais-bairro" name="dados-residenciais-bairro">
+				</div>
+
+				<!-- Campo - Logradouro (rua, avenida,...) -->
+				<div class="flex flex-col gap-1 col-span-5">
+					<div>
+						<span class="border border-gray-900 px-1 text-sm font-semibold">21</span>
+						<label for="dados-residenciais-logradouro" class="text-sm font-semibold">Logradouro (rua,
+							avenida,...</label>
+					</div>
+					<input class="border-r border-l border-b border-gray-900 rounded-b-md px-2" type="text"
+						id="dados-residenciais-logradouro" name="dados-residenciais-logradouro">
+				</div>
+
+				<!-- Campo - Código -->
+				<div class="flex flex-col gap-1 col-span-2">
+					<div>
+						<span class="border border-transparent px-1 text-sm font-semibold"></span>
+						<label for="dados-residenciais-logradouro-codigo" class="text-sm font-semibold">Código</label>
+					</div>
+					<input class="border-r border-l border-b border-gray-900 rounded-b-md px-2" type="text"
+						id="dados-residenciais-logradouro-codigo" name="dados-residenciais-logradouro-codigo">
+				</div>
+
+				<!-- Campo - Número -->
+				<div class="flex flex-col gap-1 col-span-1">
+					<div>
+						<span class="border border-gray-900 px-1 text-sm font-semibold">22</span>
+						<label for="dados-residenciais-numero" class="text-sm font-semibold">Número</label>
+					</div>
+					<input class="border-r border-l border-b border-gray-900 rounded-b-md px-2" type="text"
+						id="dados-residenciais-numero" name="dados-residenciais-numero">
+				</div>
+
+				<!-- Campo - Complemento (apto.,casa,...) -->
+				<div class="flex flex-col gap-1 col-span-6">
+					<div>
+						<span class="border border-gray-900 px-1 text-sm font-semibold">23</span>
+						<label for="dados-residenciais-numero" class="text-sm font-semibold">Complemento (apto.,casa,...)</label>
+					</div>
+					<input class="border-r border-l border-b border-gray-900 rounded-b-md px-2" type="text"
+						id="dados-residenciais-numero" name="dados-residenciais-numero">
+				</div>
+
+				<!-- Campo - Geo campo 1 -->
+				<div class="flex flex-col gap-1 col-span-3">
+					<div>
+						<span class="border border-gray-900 px-1 text-sm font-semibold">24</span>
+						<label for="dados-residenciais-geo-campo-1" class="text-sm font-semibold">Geo campo 1</label>
+					</div>
+					<input class="border-r border-l border-b border-gray-900 rounded-b-md px-2" type="text"
+						id="dados-residenciais-geo-campo-1" name="dados-residenciais-geo-campo-1">
+				</div>
+
+				<!-- Campo - Geo campo 2 -->
+				<div class="flex flex-col gap-1 col-span-3">
+					<div>
+						<span class="border border-gray-900 px-1 text-sm font-semibold">25</span>
+						<label for="dados-residenciais-geo-campo-2" class="text-sm font-semibold">Geo campo 2</label>
+					</div>
+					<input class="border-r border-l border-b border-gray-900 rounded-b-md px-2" type="text"
+						id="dados-residenciais-geo-campo-2" name="dados-residenciais-geo-campo-2">
+				</div>
+
+				<!-- Campo - Ponto de Referência -->
+				<div class="flex flex-col gap-1 col-span-5">
+					<div>
+						<span class="border border-gray-900 px-1 text-sm font-semibold">26</span>
+						<label for="dados-residenciais-ponto-referencia" class="text-sm font-semibold">Ponto de Referência</label>
+					</div>
+					<input class="border-r border-l border-b border-gray-900 rounded-b-md px-2" type="text"
+						id="dados-residenciais-ponto-referencia" name="dados-residenciais-ponto-referencia">
+				</div>
+
+				<!-- Campo - CEP -->
+				<div class="flex flex-col gap-1 col-span-2">
+					<div>
+						<span class="border border-gray-900 px-1 text-sm font-semibold">27</span>
+						<label for="dados-residenciais-ponto-referencia" class="text-sm font-semibold">CEP</label>
+					</div>
+					<input class="border-r border-l border-b border-gray-900 rounded-b-md px-2" type="text"
+						id="dados-residenciais-ponto-referencia" name="dados-residenciais-ponto-referencia">
+				</div>
+
+				<!-- Campo - (DDD) Telefone -->
+				<div class="flex flex-col gap-1 col-span-3">
+					<div>
+						<span class="border border-gray-900 px-1 text-sm font-semibold">28</span>
+						<label for="dados-residenciais-telefone" class="text-sm font-semibold">(DDD) Telefone</label>
+					</div>
+					<input class="border-r border-l border-b border-gray-900 rounded-b-md px-2" type="tel"
+						id="dados-residenciais-telefone" name="dados-residenciais-telefone">
+				</div>
+
+				<!-- Campo - Zona -->
+				<div class="flex flex-col gap-1 col-span-3">
+					<div>
+						<span class="border border-gray-900 px-1 text-sm font-semibold">29</span>
+						<label for="dados-residenciais-zona" class="text-sm font-semibold">Zona</label>
+					</div>
+					<select class="border-r border-l border-b border-gray-900 rounded-b-md px-2" id="dados-residenciais-zona"
+						required name="dados-residenciais-zona">
+						<option value="" selected disabled>Selecione uma opção</option>
+						<option value="urbana">Urbana</option>
+						<option value="rural">Rural</option>
+						<option value="periurbana">Periurbana</option>
+						<option value="ignorado">Ignorado</option>
+					</select>
+				</div>
+
+				<!-- Campo - País (se residente fora do Brasil) -->
+				<div class="flex flex-col gap-1 col-span-3">
+					<div>
+						<span class="border border-gray-900 px-1 text-sm font-semibold">30</span>
+						<label for="dados-residenciais-pais" class="text-sm font-semibold">País (se residente fora do
+							Brasil)</label>
+					</div>
+					<input class="border-r border-l border-b border-gray-900 rounded-b-md px-2" type="text"
+						id="dados-residenciais-pais" name="dados-residenciais-pais">
+				</div>
+			</div>
+			<!-- Título -->
+			<div class="w-full border border-gray-900 p-2 rounded-md">
+				<h2 class="text-center text-2xl font-bold">Dados Clínicos e Laboratoriais</h2>
+			</div>
+			<!-- Investigação -->
+			<div class="grid grid-cols-10 gap-x-1 gap-y-2">
+				<!-- Campo - Data da Investigação -->
+				<div class="flex flex-col gap-1 col-span-3">
+					<div>
+						<span class="border border-gray-900 px-1 text-sm font-semibold">31</span>
+						<label for="investigacao-data-investigacao" class="text-sm font-semibold">Data da Investigação</label>
+					</div>
+					<input class="border-r border-l border-b border-gray-900 rounded-b-md px-2" type="date"
+						id="investigacao-data-investigacao" name="investigacao-data-investigacao">
+				</div>
+
+				<!-- Campo - Ocupação -->
+				<div class="flex flex-col gap-1 col-span-7">
+					<div>
+						<span class="border border-gray-900 px-1 text-sm font-semibold">32</span>
+						<label for="investicagao-ocupacao" class="text-sm font-semibold">Ocupação</label>
+					</div>
+					<input class="border-r border-l border-b border-gray-900 rounded-b-md px-2" type="text"
+						id="investicagao-ocupacao" name="investicagao-ocupacao">
+				</div>
+			</div>
+			<!-- Dados Clínicos -->
+			<div class="grid grid-cols-10 gap-x-1 gap-y-2">
+				<!-- Campo - Sinais Clínicos -->
+				<div class="flex flex-col gap-1 col-span-10">
+					<div>
+						<span class="border border-gray-900 px-1 text-sm font-semibold">33</span>
+						<label for="dados-clinicos-sinais-clinicos" class="text-sm font-semibold">Sinais Clínicos</label>
+					</div>
+					<div class="grid grid-cols-7 border-r border-l border-b border-gray-900 rounded-b-md px-2">
+						<!-- Campo - Sinais Clínicos - Caixa - Febre -->
+						<div class="flex flex-row items-center justify-start gap-1">
+							<input type="checkbox" value="dados-clinicos-sinais-clinicos-febre"
+								id="dados-clinicos-sinais-clinicos-febre" name="dados-clinicos-sinais-clinicos-febre">
+							<label for="dados-clinicos-sinais-clinicos-febre">Febre</label>
+						</div>
+						<!-- Campo - Sinais Clínicos - Caixa - Cefaleia -->
+						<div class="flex flex-row items-center justify-start gap-1">
+							<input type="checkbox" value="dados-clinicos-sinais-clinicos-cefaleia"
+								id="dados-clinicos-sinais-clinicos-cefaleia" name="dados-clinicos-sinais-clinicos-cefaleia">
+							<label for="dados-clinicos-sinais-clinicos-cefaleia">Cefaleia</label>
+						</div>
+						<!-- Campo - Sinais Clínicos - Caixa - Vômito -->
+						<div class="flex flex-row items-center justify-start gap-1">
+							<input type="checkbox" value="dados-clinicos-sinais-clinicos-vomito"
+								id="dados-clinicos-sinais-clinicos-vomito" name="dados-clinicos-sinais-clinicos-vomito">
+							<label for="dados-clinicos-sinais-clinicos-vomito">Vômito</label>
+						</div>
+						<!-- Campo - Sinais Clínicos - Caixa - Dor nas costas -->
+						<div class="flex flex-row items-center justify-start gap-1">
+							<input type="checkbox" value="dados-clinicos-sinais-clinicos-dor-costas"
+								id="dados-clinicos-sinais-clinicos-dor-costas" name="dados-clinicos-sinais-clinicos-dor-costas">
+							<label for="dados-clinicos-sinais-clinicos-dor-costas">Dor nas Costas</label>
+						</div>
+						<!-- Campo - Sinais Clínicos - Caixa - Artrite -->
+						<div class="flex flex-row items-center justify-start gap-1">
+							<input type="checkbox" value="dados-clinicos-sinais-clinicos-artrite"
+								id="dados-clinicos-sinais-clinicos-artrite" name="dados-clinicos-sinais-clinicos-artrite">
+							<label for="dados-clinicos-sinais-clinicos-artrite">Artrite</label>
+						</div>
+						<!-- Campo - Sinais Clínicos - Caixa - Petéquias -->
+						<div class="flex flex-row items-center justify-start gap-1">
+							<input type="checkbox" value="dados-clinicos-sinais-clinicos-petequias"
+								id="dados-clinicos-sinais-clinicos-petequias" name="dados-clinicos-sinais-clinicos-petequias">
+							<label for="dados-clinicos-sinais-clinicos-petequias">Petéquias</label>
+						</div>
+						<!-- Campo - Sinais Clínicos - Caixa - Prova do laço positiva -->
+						<div class="flex flex-row items-center justify-start gap-1">
+							<input type="checkbox" value="dados-clinicos-sinais-clinicos-laco-positiva"
+								id="dados-clinicos-sinais-clinicos-laco-positiva" name="dados-clinicos-sinais-clinicos-laco-positiva">
+							<label for="dados-clinicos-sinais-clinicos-laco-positiva">Prova do laço positiva</label>
+						</div>
+						<!-- Campo - Sinais Clínicos - Caixa - Mialgia -->
+						<div class="flex flex-row items-center justify-start gap-1">
+							<input type="checkbox" value="dados-clinicos-sinais-clinicos-mialgia"
+								id="dados-clinicos-sinais-clinicos-mialgia" name="dados-clinicos-sinais-clinicos-mialgia">
+							<label for="dados-clinicos-sinais-clinicos-mialgia">Mialgia</label>
+						</div>
+						<!-- Campo - Sinais Clínicos - Caixa - Exantema -->
+						<div class="flex flex-row items-center justify-start gap-1">
+							<input type="checkbox" value="dados-clinicos-sinais-exantema" id="dados-clinicos-sinais-exantema"
+								name="dados-clinicos-sinais-exantema">
+							<label for="dados-clinicos-sinais-exantema">Exantema</label>
+						</div>
+						<!-- Campo - Sinais Clínicos - Caixa - Náuseas -->
+						<div class="flex flex-row items-center justify-start gap-1">
+							<input type="checkbox" value="dados-clinicos-sinais-nauseas" id="dados-clinicos-sinais-nauseas"
+								name="dados-clinicos-sinais-nauseas">
+							<label for="dados-clinicos-sinais-nauseas">Náuseas</label>
+						</div>
+						<!-- Campo - Sinais Clínicos - Caixa - Conjutivite -->
+						<div class="flex flex-row items-center justify-start gap-1">
+							<input type="checkbox" value="dados-clinicos-sinais-conjutivite" id="dados-clinicos-sinais-conjutivite"
+								name="dados-clinicos-sinais-conjutivite">
+							<label for="dados-clinicos-sinais-conjutivite">Conjutivite</label>
+						</div>
+						<!-- Campo - Sinais Clínicos - Caixa - Artralgia Intensa -->
+						<div class="flex flex-row items-center justify-start gap-1">
+							<input type="checkbox" value="dados-clinicos-sinais-artalgia-intensa"
+								id="dados-clinicos-sinais-artalgia-intensa" name="dados-clinicos-sinais-artalgia-intensa">
+							<label for="dados-clinicos-sinais-artalgia-intensa">Artralgia Intensa</label>
+						</div>
+						<!-- Campo - Sinais Clínicos - Caixa - Leucopenia -->
+						<div class="flex flex-row items-center justify-start gap-1">
+							<input type="checkbox" value="dados-clinicos-sinais-artalgia-leucopenia"
+								id="dados-clinicos-sinais-artalgia-leucopenia" name="dados-clinicos-sinais-artalgia-leucopenia">
+							<label for="dados-clinicos-sinais-artalgia-leucopenia">Leucopenia</label>
+						</div>
+						<!-- Campo - Sinais Clínicos - Caixa - Dor retroorbital -->
+						<div class="flex flex-row items-center justify-start gap-1">
+							<input type="checkbox" value="dados-clinicos-sinais-artalgia-dor-retroorbital"
+								id="dados-clinicos-sinais-artalgia-dor-retroorbital"
+								name="dados-clinicos-sinais-artalgia-dor-retroorbital">
+							<label for="dados-clinicos-sinais-artalgia-dor-retroorbital">Dor retroorbital</label>
+						</div>
+					</div>
+				</div>
+				<!-- Campo - Doenças Pré-existentes -->
+				<div class="flex flex-col gap-1 col-span-10">
+					<div>
+						<span class="border border-gray-900 px-1 text-sm font-semibold">34</span>
+						<label for="dados-clinicos-sinais-clinicos" class="text-sm font-semibold">Doenças pré-existentes</label>
+					</div>
+					<div class="grid grid-cols-7 border-r border-l border-b border-gray-900 rounded-b-md px-2">
+						<!-- Campo - Sinais Clínicos - Caixa - Diabetes -->
+						<div class="flex flex-row items-center justify-start gap-1">
+							<input type="checkbox" value="dados-clinicos-doencas-diabetes" id="dados-clinicos-doencas-diabetes"
+								name="dados-clinicos-doencas-diabetes">
+							<label for="dados-clinicos-doencas-diabetes">Diabetes</label>
+						</div>
+						<!-- Campo - Sinais Clínicos - Caixa - Hepatopatias -->
+						<div class="flex flex-row items-center justify-start gap-1">
+							<input type="checkbox" value="dados-clinicos-doencas-hepatopatias"
+								id="dados-clinicos-doencas-hepatopatias" name="dados-clinicos-doencas-hepatopatias">
+							<label for="dados-clinicos-doencas-hepatopatias">Hepatopatias</label>
+						</div>
+						<!-- Campo - Sinais Clínicos - Caixa - Hipertensão arterial -->
+						<div class="flex flex-row items-center justify-start gap-1">
+							<input type="checkbox" value="dados-clinicos-doencas-hipertensao-arterial"
+								id="dados-clinicos-doencas-hipertensao-arterial" name="dados-clinicos-doencas-hipertensao-arterial">
+							<label for="dados-clinicos-doencas-hipertensao-arterial">Hipertensão arterial</label>
+						</div>
+						<!-- Campo - Sinais Clínicos - Caixa - Doenças auto-imunes -->
+						<div class="flex flex-row items-center justify-start gap-1">
+							<input type="checkbox" value="dados-clinicos-doencas-doenca-auto-imune"
+								id="dados-clinicos-doencas-doenca-auto-imune" name="dados-clinicos-doencas-doenca-auto-imune">
+							<label for="dados-clinicos-doencas-doenca-auto-imune">Doenças auto-imunes</label>
+						</div>
+						<!-- Campo - Sinais Clínicos - Caixa - Doenças hematológicas -->
+						<div class="flex flex-row items-center justify-start gap-1">
+							<input type="checkbox" value="dados-clinicos-doencas-doenca-hematologicas"
+								id="dados-clinicos-doencas-doenca-hematologicas" name="dados-clinicos-doencas-doenca-hematologicas">
+							<label for="dados-clinicos-doencas-doenca-hematologicas">Doenças hematológicas</label>
+						</div>
+						<!-- Campo - Sinais Clínicos - Caixa - Doenças renal crônica -->
+						<div class="flex flex-row items-center justify-start gap-1">
+							<input type="checkbox" value="dados-clinicos-doencas-doenca-renal-cronica"
+								id="dados-clinicos-doencas-doenca-renal-cronica" name="dados-clinicos-doencas-doenca-renal-cronica">
+							<label for="dados-clinicos-doencas-doenca-renal-cronica">Doenças renal crônica</label>
+						</div>
+						<!-- Campo - Sinais Clínicos - Caixa - Doenças ácido-péptica -->
+						<div class="flex flex-row items-center justify-start gap-1">
+							<input type="checkbox" value="dados-clinicos-doencas-doenca-acido-peptica"
+								id="dados-clinicos-doencas-doenca-acido-peptica" name="dados-clinicos-doencas-doenca-acido-peptica">
+							<label for="dados-clinicos-doencas-doenca-acido-peptica">Doenças ácido-péptica</label>
+						</div>
+
+
+					</div>
+				</div>
+
+			</div>
+			<!-- Dados Laboratoriais -->
+			<div class="grid grid-cols-12 gap-x-1 gap-y-2">
+				<!-- Campo - Sorologia (igM) Chikungunya -->
+				<div class="grid grid-cols-8 gap-x-1 col-span-8">
+					<h2 class="col-span-8 font-bold">Sorologia (IgM) Chikungunya</h2>
+					<!-- Campo - Sorologia (igM) Chikungunya - Data da Coleta da 1ª Amostra (S1) -->
+					<div class="flex flex-col gap-1 col-span-4">
+						<div>
+							<span class="border border-gray-900 px-1 text-sm font-semibold">35</span>
+							<label for="dados-laboratoriais-coleta-s1-chikungunya" class="text-sm font-semibold">Coleta da 1ª Amostra
+								(S1)</label>
+						</div>
+						<input class="border-r border-l border-b border-gray-900 rounded-b-md px-2" type="date"
+							id="dados-laboratoriais-coleta-s1-chikungunya" name="dados-laboratoriais-coleta-s1-chikungunya">
+					</div>
+					<!-- Campo - Sorologia (igM) Chikungunya - Data da Coleta da 2ª Amostra (S2) -->
+					<div class="flex flex-col gap-1 col-span-4">
+						<div>
+							<span class="border border-gray-900 px-1 text-sm font-semibold">36</span>
+							<label for="dados-laboratoriais-coleta-s2-chikungunya" class="text-sm font-semibold">Coleta da 2ª Amostra
+								(S2)</label>
+						</div>
+						<input class="border-r border-l border-b border-gray-900 rounded-b-md px-2" type="date"
+							id="dados-laboratoriais-coleta-s2-chikungunya" name="dados-laboratoriais-coleta-s2-chikungunya">
+					</div>
+				</div>
+				<div class="grid grid-cols-4 gap-x-1 col-span-4">
+					<h2 class="col-span-3 font-bold">Exame PRNT</h2>
+					<!-- Campo - Exame PRNT - Data da Coleta -->
+					<div class="flex flex-col gap-1 col-span-4">
+						<div>
+							<span class="border border-gray-900 px-1 text-sm font-semibold">37</span>
+							<label for="dados-laboratoriais-coleta-prnt" class="text-sm font-semibold">Data da Coleta</label>
+						</div>
+						<input class="border-r border-l border-b border-gray-900 rounded-b-md px-2" type="date"
+							id="dados-laboratoriais-coleta-prnt" name="dados-laboratoriais-coleta-prnt">
+					</div>
+				</div>
+				<!-- Campo - Sorologia (igM) Chikungunya - Resultado - S1 Data da Coleta -->
+				<div class="flex flex-col gap-1 col-span-4">
+					<div>
+						<span class="border border-gray-900 px-1 text-sm font-semibold">38</span>
+						<label for="dados-laboratoriais-resultado-coleta-s1-chikungunya" class="text-sm font-semibold">Resultado
+							S1</label>
+					</div>
+					<select class="border-r border-l border-b border-gray-900 rounded-b-md px-2"
+						id="dados-laboratoriais-resultado-coleta-s1-chikungunya" required
+						id="dados-laboratoriais-resultado-coleta-s1-chikungunya"
+						name="dados-laboratoriais-resultado-coleta-s1-chikungunya">
+						<option value="" selected disabled>Selecione uma opção</option>
+						<option value="reagente">Reagente</option>
+						<option value="nao-reagente">Não Reagente</option>
+						<option value="inconclusivo">Inconclusivo</option>
+						<option value="nao-realizado">Não realizado</option>
+					</select>
+				</div>
+				<!-- Campo - Sorologia (igM) Chikungunya - Resultado - S2 Data da Coleta -->
+				<div class="flex flex-col gap-1 col-span-4">
+					<div>
+						<span class="border border-transparent px-1 text-sm font-semibold"></span>
+						<label for="dados-laboratoriais-resultado-coleta-s1" class="text-sm font-semibold">Resultado S2</label>
+					</div>
+					<select class="border-r border-l border-b border-gray-900 rounded-b-md px-2"
+						id="dados-laboratoriais-resultado-coleta-s2-chikungunya" required
+						id="dados-laboratoriais-resultado-coleta-s2-chikungunya"
+						name="dados-laboratoriais-resultado-coleta-s2-chikungunya">
+						<option value="" selected disabled>Selecione uma opção</option>
+						<option value="reagente">Reagente</option>
+						<option value="nao-reagente">Não Reagente</option>
+						<option value="inconclusivo">Inconclusivo</option>
+						<option value="nao-realizado">Não realizado</option>
+					</select>
+				</div>
+				<!-- Campo - Exame PRNT - Resultado - Data da Coleta -->
+				<div class="flex flex-col gap-1 col-span-4">
+					<div>
+						<span class="border border-transparent px-1 text-sm font-semibold"></span>
+						<label for="dados-laboratoriais-resultado-coleta-s1" class="text-sm font-semibold">Resultado PRNT</label>
+					</div>
+					<select class="border-r border-l border-b border-gray-900 rounded-b-md px-2"
+						id="dados-laboratoriais-resultado-coleta-prnt" required id="dados-laboratoriais-resultado-coleta-prnt"
+						name="dados-laboratoriais-resultado-coleta-prnt">
+						<option value="" selected disabled>Selecione uma opção</option>
+						<option value="reagente">Reagente</option>
+						<option value="nao-reagente">Não Reagente</option>
+						<option value="inconclusivo">Inconclusivo</option>
+						<option value="nao-realizado">Não realizado</option>
+					</select>
+				</div>
+				<!-- Campo - Chikungunya -->
+				<div class="grid grid-cols-6 gap-x-1 col-span-6">
+					<h2 class="col-span-6 font-bold">Sorologia (IgM) Dengue</h2>
+					<!-- Campo - Sorologia (igM) Dengue - Data da Coleta -->
+					<div class="flex flex-col gap-1 col-span-3">
+						<div>
+							<span class="border border-gray-900 px-1 text-sm font-semibold">39</span>
+							<label for="dados-laboratoriais-coleta-dengue" class="text-sm font-semibold">Data da Coleta</label>
+						</div>
+						<input class="border-r border-l border-b border-gray-900 rounded-b-md px-2" type="date"
+							id="dados-laboratoriais-coleta-dengue" name="dados-laboratoriais-coleta-dengue">
+					</div>
+					<!-- Campo - Sorologia (igM) Dengue - Resultado -  Data da Coleta -->
+					<div class="flex flex-col gap-1 col-span-3">
+						<div>
+							<span class="border border-gray-900 px-1 text-sm font-semibold">40</span>
+							<label for="dados-laboratoriais-resultado-coleta-dengue" class="text-sm font-semibold">Resultado</label>
+						</div>
+						<select class="border-r border-l border-b border-gray-900 rounded-b-md px-2"
+							id="dados-laboratoriais-resultado-coleta-dengue" required id="dados-laboratoriais-resultado-coleta-dengue"
+							name="dados-laboratoriais-resultado-coleta-dengue">
+							<option value="" selected disabled>Selecione uma opção</option>
+							<option value="positivo">Positivo</option>
+							<option value="negativo">Negativo</option>
+							<option value="inconclusivo">Inconclusivo</option>
+							<option value="nao-realizado">Não realizado</option>
+						</select>
+					</div>
+				</div>
+				<!-- Campo - NS1 -->
+				<div class="grid grid-cols-6 gap-x-1 col-span-6">
+					<h2 class="col-span-6 font-bold">Exame NS1</h2>
+					<!-- Campo - Exame NS1 - Data da Coleta -->
+					<div class="flex flex-col gap-1 col-span-3">
+						<div>
+							<span class="border border-gray-900 px-1 text-sm font-semibold">41</span>
+							<label for="dados-laboratoriais-coleta-ns1" class="text-sm font-semibold">Data da Coleta</label>
+						</div>
+						<input class="border-r border-l border-b border-gray-900 rounded-b-md px-2" type="date"
+							id="dados-laboratoriais-coleta-ns1" name="dados-laboratoriais-coleta-ns1">
+					</div>
+					<!-- Campo - Exame NS1 - Resultado -  Data da Coleta -->
+					<div class="flex flex-col gap-1 col-span-3">
+						<div>
+							<span class="border border-gray-900 px-1 text-sm font-semibold">42</span>
+							<label for="dados-laboratoriais-resultado-coleta-ns1" class="text-sm font-semibold">Resultado</label>
+						</div>
+						<select class="border-r border-l border-b border-gray-900 rounded-b-md px-2"
+							id="dados-laboratoriais-resultado-coleta-ns1" required id="dados-laboratoriais-resultado-coleta-ns1"
+							name="dados-laboratoriais-resultado-coleta-ns1">
+							<option value="" selected disabled>Selecione uma opção</option>
+							<option value="positivo">Positivo</option>
+							<option value="negativo">Negativo</option>
+							<option value="inconclusivo">Inconclusivo</option>
+							<option value="nao-realizado">Não realizado</option>
+						</select>
+					</div>
+				</div>
+				<!-- Campo - Isolamento -->
+				<div class="grid grid-cols-6 gap-x-1 col-span-6">
+					<h2 class="col-span-6 font-bold">Isolamento</h2>
+					<!-- Campo - Isolamento - Data da Coleta -->
+					<div class="flex flex-col gap-1 col-span-3">
+						<div>
+							<span class="border border-gray-900 px-1 text-sm font-semibold">43</span>
+							<label for="dados-laboratoriais-coleta-isolamento" class="text-sm font-semibold">Data da Coleta</label>
+						</div>
+						<input class="border-r border-l border-b border-gray-900 rounded-b-md px-2" type="date"
+							id="dados-laboratoriais-coleta-isolamento" name="dados-laboratoriais-coleta-isolamento">
+					</div>
+					<!-- Campo - Isolamento - Resultado -  Data da Coleta -->
+					<div class="flex flex-col gap-1 col-span-3">
+						<div>
+							<span class="border border-gray-900 px-1 text-sm font-semibold">44</span>
+							<label for="dados-laboratoriais-resultado-coleta-isolamento"
+								class="text-sm font-semibold">Resultado</label>
+						</div>
+						<select class="border-r border-l border-b border-gray-900 rounded-b-md px-2"
+							id="dados-laboratoriais-resultado-coleta-isolamento" required
+							id="dados-laboratoriais-resultado-coleta-isolamento"
+							name="dados-laboratoriais-resultado-coleta-isolamento">
+							<option value="" selected disabled>Selecione uma opção</option>
+							<option value="positivo">Positivo</option>
+							<option value="negativo">Negativo</option>
+							<option value="inconclusivo">Inconclusivo</option>
+							<option value="nao-realizado">Não realizado</option>
+						</select>
+					</div>
+				</div>
+				<!-- Campo - RT-PCR -->
+				<div class="grid grid-cols-6 gap-x-1 col-span-6">
+					<h2 class="col-span-6 font-bold">RT-PCR</h2>
+					<!-- Campo - Isolamento - Data da Coleta -->
+					<div class="flex flex-col gap-1 col-span-3">
+						<div>
+							<span class="border border-gray-900 px-1 text-sm font-semibold">45</span>
+							<label for="dados-laboratoriais-coleta-rt-pcr" class="text-sm font-semibold">Data da Coleta</label>
+						</div>
+						<input class="border-r border-l border-b border-gray-900 rounded-b-md px-2" type="date"
+							id="dados-laboratoriais-coleta-rt-pcr" name="dados-laboratoriais-coleta-rt-pcr">
+					</div>
+					<!-- Campo - RT-PCR - Resultado -  Data da Coleta -->
+					<div class="flex flex-col gap-1 col-span-3">
+						<div>
+							<span class="border border-gray-900 px-1 text-sm font-semibold">46</span>
+							<label for="dados-laboratoriais-resultado-coleta-rt-pcr" class="text-sm font-semibold">Resultado</label>
+						</div>
+						<select class="border-r border-l border-b border-gray-900 rounded-b-md px-2"
+							id="dados-laboratoriais-resultado-coleta-rt-pcr" required id="dados-laboratoriais-resultado-coleta-rt-pcr"
+							name="dados-laboratoriais-resultado-coleta-rt-pcr">
+							<option value="" selected disabled>Selecione uma opção</option>
+							<option value="positivo">Positivo</option>
+							<option value="negativo">Negativo</option>
+							<option value="inconclusivo">Inconclusivo</option>
+							<option value="nao-realizado">Não realizado</option>
+						</select>
+					</div>
+				</div>
+				<!-- Campo - Sorotipo -->
+				<div class="flex flex-col gap-1 col-span-4">
+					<div>
+						<span class="border border-gray-900 px-1 text-sm font-semibold">47</span>
+						<label for="dados-laboratoriais-resultado-sorotipo" class="text-sm font-semibold">Sorotipo</label>
+					</div>
+					<select class="border-r border-l border-b border-gray-900 rounded-b-md px-2"
+						id="dados-laboratoriais-resultado-sorotipo" required id="dados-laboratoriais-resultado-sorotipo"
+						name="dados-laboratoriais-resultado-sorotipo">
+						<option value="" selected disabled>Selecione uma opção</option>
+						<option value="denv-1">DENV 1</option>
+						<option value="denv-2">DENV 2</option>
+						<option value="denv-3">DENV 3</option>
+						<option value="denv-4">DENV 4</option>
+					</select>
+				</div>
+				<!-- Campo - Histopatologia -->
+				<div class="flex flex-col gap-1 col-span-4">
+					<div>
+						<span class="border border-gray-900 px-1 text-sm font-semibold">48</span>
+						<label for="dados-laboratoriais-resultado-histopatologia"
+							class="text-sm font-semibold">Histopatologia</label>
+					</div>
+					<select class="border-r border-l border-b border-gray-900 rounded-b-md px-2"
+						id="dados-laboratoriais-resultado-histopatologia" required id="dados-laboratoriais-resultado-histopatologia"
+						name="dados-laboratoriais-resultado-histopatologia">
+						<option value="" selected disabled>Selecione uma opção</option>
+						<option value="compativel">Compatível</option>
+						<option value="incompativel">Incompátivel</option>
+						<option value="inconclusivo">Inconclusivo</option>
+						<option value="nao-realizado">Não Realizado</option>
+					</select>
+				</div>
+				<!-- Campo - Imunohistoqímica -->
+				<div class="flex flex-col gap-1 col-span-4">
+					<div>
+						<span class="border border-gray-900 px-1 text-sm font-semibold">49</span>
+						<label for="dados-laboratoriais-resultado-imunohistoquimica"
+							class="text-sm font-semibold">Imunohistoquímica</label>
+					</div>
+					<select class="border-r border-l border-b border-gray-900 rounded-b-md px-2"
+						id="dados-laboratoriais-resultado-imunohistoquimica" required
+						id="dados-laboratoriais-resultado-imunohistoquimica" name="dados-laboratoriais-resultado-imunohistoquimica">
+						<option value="" selected disabled>Selecione uma opção</option>
+						<option value="positivo">Positivo</option>
+						<option value="negativo">negativo</option>
+						<option value="inconclusivo">Inconclusivo</option>
+						<option value="nao-realizado">Não Realizado</option>
+					</select>
+				</div>
+			</div>
+			<!-- Hospitalização -->
+			<div class="grid grid-cols-12 gap-x-1 gap-y-2">
+				<!-- Campo - Ocorreu hospitalização? -->
+				<div class="flex flex-col gap-1 col-span-3">
+					<div>
+						<span class="border border-gray-900 px-1 text-sm font-semibold">50</span>
+						<label for="hospitalizacao-ocorreu-hospitalizacao" class="text-sm font-semibold">Ocorreu-hospitalizacao
+							Hospitalização?</label>
+					</div>
+					<select class="border-r border-l border-b border-gray-900 rounded-b-md px-2"
+						id="hospitalizacao-ocorreu-hospitalizacao" required id="hospitalizacao-ocorreu-hospitalizacao"
+						name="hospitalizacao-ocorreu-hospitalizacao">
+						<option value="" selected disabled>Selecione uma opção</option>
+						<option value="sim">Sim</option>
+						<option value="nao">Não</option>
+						<option value="ignorado">Ignorado</option>
+					</select>
+				</div>
+				<!-- Campo - Data da Internação -->
+				<div class="flex flex-col gap-1 col-span-3">
+					<div>
+						<span class="border border-gray-900 px-1 text-sm font-semibold">51</span>
+						<label for="hospitalizacao-data-internacao" class="text-sm font-semibold">Data da Internação</label>
+					</div>
+					<input class="border-r border-l border-b border-gray-900 rounded-b-md px-2" type="date"
+						id="hospitalizacao-data-internacao" name="hospitalizacao-data-internacao">
+				</div>
+				<!-- Campo - UF -->
+				<div class="flex flex-col gap-1 col-span-1">
+					<div>
+						<span class="border border-gray-900 px-1 text-sm font-semibold">52</span>
+						<label for="hospitalizacao-uf" class="text-sm font-semibold">UF</label>
+					</div>
+					<input class="border-r border-l border-b border-gray-900 rounded-b-md px-2" type="text" id="hospitalizacao-uf"
+						name="hospitalizacao-uf">
+				</div>
+				<!-- Campo - Município de Notificação -->
+				<div class="flex flex-col gap-1 col-span-3">
+					<div>
+						<span class="border border-gray-900 px-1 text-sm font-semibold">53</span>
+						<label for="hospitalizacao-município-hospital" class="text-sm font-semibold">Município de
+							Notificação</label>
+					</div>
+					<input class="border-r border-l border-b border-gray-900 rounded-b-md px-2" type="text"
+						id="hospitalizacao-município-hospital" name="hospitalizacao-município-hospital">
+				</div>
+				<!-- Campo - Código (IBGE) -->
+				<div class="flex flex-col gap-1 col-span-2">
+					<div>
+						<span class="border border-transparent px-1 text-sm font-semibold"></span>
+						<label for="hospitalizacao-município-hospital-codigo-ibge" class="text-sm font-semibold">Código
+							(IBGE)</label>
+					</div>
+					<input class="border-r border-l border-b border-gray-900 rounded-b-md px-2" type="text"
+						id="hospitalizacao-município-hospital-codigo-ibge" name="hospitalizacao-município-hospital-codigo-ibge">
+				</div>
+				<!-- Campo - Nome Hospital -->
+				<div class="flex flex-col gap-1 col-span-7">
+					<div>
+						<span class="border border-gray-900 px-1 text-sm font-semibold">54</span>
+						<label for="hospitalizacao-nome-hospital" class="text-sm font-semibold">Nome do Hospital</label>
+					</div>
+					<input class="border-r border-l border-b border-gray-900 rounded-b-md px-2" type="text"
+						id="hospitalizacao-nome-hospital" name="hospitalizacao-nome-hospital">
+				</div>
+				<!-- Campo - Código -->
+				<div class="flex flex-col gap-1 col-span-2">
+					<div>
+						<span class="border border-transparent px-1 text-sm font-semibold"></span>
+						<label for="dados-gerais-nome-hospital-codigo" class="text-sm font-semibold">Código</label>
+					</div>
+					<input class="border-r border-l border-b border-gray-900 rounded-b-md px-2" type="text"
+						id="dados-gerais-nome-hospital-codigo" name="dados-gerais-nome-hospital-codigo">
+				</div>
+				<!-- Campo - (DDD) Telefone -->
+				<div class="flex flex-col gap-1 col-span-3">
+					<div>
+						<span class="border border-gray-900 px-1 text-sm font-semibold">55</span>
+						<label for="hospitalizacao-telefone" class="text-sm font-semibold">(DDD) Telefone</label>
+					</div>
+					<input class="border-r border-l border-b border-gray-900 rounded-b-md px-2" type="tel"
+						id="hospitalizacao-telefone" name="hospitalizacao-telefone">
+				</div>
+			</div>
+			<!-- Conclusão -->
+			<div class="grid grid-cols-12 gap-x-1 gap-y-2">
+				<h2 class="font-bold col-span-10">Local Provável de Infecção (no período de 15 dias)</h2>
+				<!-- Campo - Ocorreu hospitalização? -->
+				<div class="flex flex-col gap-1 col-span-7">
+					<div>
+						<span class="border border-gray-900 px-1 text-sm font-semibold">56</span>
+						<label for="conclusao-autoctone" class="text-sm font-semibold">O caso é autóctone do município de
+							residência?</label>
+					</div>
+					<select class="border-r border-l border-b border-gray-900 rounded-b-md px-2" id="conclusao-autoctone" required
+						id="conclusao-autoctone" name="conclusao-autoctone">
+						<option value="" selected disabled>Selecione uma opção</option>
+						<option value="sim">Sim</option>
+						<option value="nao">Não</option>
+						<option value="indeterminado">Indeterminado</option>
+					</select>
+				</div>
+				<!-- Campo - UF -->
+				<div class="flex flex-col gap-1 col-span-1">
+					<div>
+						<span class="border border-gray-900 px-1 text-sm font-semibold">57</span>
+						<label for="conclusao-uf" class="text-sm font-semibold">UF</label>
+					</div>
+					<input class="border-r border-l border-b border-gray-900 rounded-b-md px-2" type="text" id="conclusao-uf"
+						name="conclusao-uf">
+				</div>
+				<!-- Campo - País -->
+				<div class="flex flex-col gap-1 col-span-4">
+					<div>
+						<span class="border border-gray-900 px-1 text-sm font-semibold">58</span>
+						<label for="conclusao-pais" class="text-sm font-semibold">País</label>
+					</div>
+					<input class="border-r border-l border-b border-gray-900 rounded-b-md px-2" type="text" id="conclusao-pais"
+						name="conclusao-pais">
+				</div>
+				<!-- Campo - Município -->
+				<div class="flex flex-col gap-1 col-span-6">
+					<div>
+						<span class="border border-gray-900 px-1 text-sm font-semibold">59</span>
+						<label for="conclusao-municipio" class="text-sm font-semibold">Município</label>
+					</div>
+					<input class="border-r border-l border-b border-gray-900 rounded-b-md px-2" type="text"
+						id="conclusao-municipio" name="conclusao-municipio">
+				</div>
+				<!-- Campo - Código (IBGE) -->
+				<div class="flex flex-col gap-1 col-span-1">
+					<div>
+						<span class="border border-transparent px-1 text-sm font-semibold"></span>
+						<label for="conclusao-municipio-codigo-ibge" class="text-sm font-semibold">Código
+							IBGE</label>
+					</div>
+					<input class="border-r border-l border-b border-gray-900 rounded-b-md px-2" type="text"
+						id="conclusao-municipio-codigo-ibge" name="conclusao-municipio-codigo-ibge">
+				</div>
+				<!-- Campo - Distrito -->
+				<div class="flex flex-col gap-1 col-span-2">
+					<div>
+						<span class="border border-gray-900 px-1 text-sm font-semibold">60</span>
+						<label for="conclusao-distrito" class="text-sm font-semibold">Distrito</label>
+					</div>
+					<input class="border-r border-l border-b border-gray-900 rounded-b-md px-2" type="text"
+						id="conclusao-distrito" name="conclusao-distrito">
+				</div>
+				<!-- Campo - Bairro -->
+				<div class="flex flex-col gap-1 col-span-3">
+					<div>
+						<span class="border border-gray-900 px-1 text-sm font-semibold">61</span>
+						<label for="conclusao-bairro" class="text-sm font-semibold">Bairro</label>
+					</div>
+					<input class="border-r border-l border-b border-gray-900 rounded-b-md px-2" type="text" id="conclusao-bairro"
+						name="conclusao-bairro">
+				</div>
+				<!-- Campo - Classificação -->
+				<div class="flex flex-col gap-1 col-span-4">
+					<div>
+						<span class="border border-gray-900 px-1 text-sm font-semibold">62</span>
+						<label for="conclusao-classificacao" class="text-sm font-semibold">Classificação</label>
+					</div>
+					<select class="border-r border-l border-b border-gray-900 rounded-b-md px-2" id="conclusao-classificacao"
+						required id="conclusao-classificacao" name="conclusao-classificacao">
+						<option value="" selected disabled>Selecione uma opção</option>
+						<option value="descartado">Descartado</option>
+						<option value="dengue">Dengue</option>
+						<option value="dengue-alarme">Dengue com Sinais de Alarme</option>
+						<option value="dengue-grave">Dengue Grave</option>
+						<option value="chikungunya">Chikungunya</option>
+					</select>
+				</div>
+				<!-- Campo - Critério de Confirmação e Descarte -->
+				<div class="flex flex-col gap-1 col-span-4">
+					<div>
+						<span class="border border-gray-900 px-1 text-sm font-semibold">63</span>
+						<label for="conclusao-criteiro" class="text-sm font-semibold">Critério de Confirmação ou
+							Descarte</label>
+					</div>
+					<select class="border-r border-l border-b border-gray-900 rounded-b-md px-2" id="conclusao-criteiro" required
+						id="conclusao-criteiro" name="conclusao-criteiro">
+						<option value="" selected disabled>Selecione uma opção</option>
+						<option value="laboratorio">Laboratório</option>
+						<option value="clinico-epidemiologico">Clínico-Epidemiológico</option>
+						<option value="em-investigacao">Em investigação</option>
+					</select>
+				</div>
+				<!-- Campo - Apresentação Clínica -->
+				<div class="flex flex-col gap-1 col-span-4">
+					<div>
+						<span class="border border-gray-900 px-1 text-sm font-semibold">64</span>
+						<label for="conclusao-apresentacao-clinica" class="text-sm font-semibold">Apresentação Clínica</label>
+					</div>
+					<select class="border-r border-l border-b border-gray-900 rounded-b-md px-2"
+						id="conclusao-apresentacao-clinica" required name="conclusao-apresentacao-clinica">
+						<option value="" selected disabled>Selecione uma opção</option>
+						<option value="aguda">Aguda</option>
+						<option value="cronica">Crônica</option>
+					</select>
+				</div>
+				<!-- Campo - Evolução do Caso -->
+				<div class="flex flex-col gap-1 col-span-4">
+					<div>
+						<span class="border border-gray-900 px-1 text-sm font-semibold">65</span>
+						<label for="conclusao-evolucao-caso" class="text-sm font-semibold">Evolução do Caso</label>
+					</div>
+					<select class="border-r border-l border-b border-gray-900 rounded-b-md px-2" required
+						id="conclusao-evolucao-caso" name="conclusao-evolucao-caso">
+						<option value="" selected disabled>Selecione uma opção</option>
+						<option value="cura">Cura</option>
+						<option value="obito-agravo">Óbito pelo agravo</option>
+						<option value="obito-outras">Óbito por outras causas</option>
+						<option value="obito-investigacao">Óbito em investigação</option>
+						<option value="ignorado">Ignorado</option>
+					</select>
+				</div>
+				<!-- Campo - Data do Óbito -->
+				<div class="flex flex-col gap-1 col-span-4">
+					<div>
+						<span class="border border-gray-900 px-1 text-sm font-semibold">66</span>
+						<label for="conclusao-data-obito" class="text-sm font-semibold">Data do Óbito</label>
+					</div>
+					<input class="border-r border-l border-b border-gray-900 rounded-b-md px-2" type="date"
+						id="conclusao-data-obito" name="conclusao-data-obito">
+				</div>
+				<!-- Campo - Data do Encerramento -->
+				<div class="flex flex-col gap-1 col-span-4">
+					<div>
+						<span class="border border-gray-900 px-1 text-sm font-semibold">67</span>
+						<label for="conclusao-data-encerramento" class="text-sm font-semibold">Data do Encerramento</label>
+					</div>
+					<input class="border-r border-l border-b border-gray-900 rounded-b-md px-2" type="date"
+						id="conclusao-data-encerramento" name="conclusao-data-encerramento">
+				</div>
+			</div>
+			<h2 class="col-span-10 font-bold">Preencher os sinais clínicos para Dengue com Sinais de Alarme e
+				Dengue
+				Grave</h2>
+			<!-- Dados Clínicos - Dengue com Sinais de Alarme e Dengue Grave -->
+			<div class="grid grid-cols-10 gap-x-1 gap-y-2">
+				<!-- Campo - Sinais Clínicos Grave -->
+				<div class="flex flex-col gap-1 col-span-8">
+					<div>
+						<span class="border border-gray-900 px-1 text-sm font-semibold">68</span>
+						<label for="dados-clinicos-graves-sinais-alarme" class="text-sm font-semibold">Dengue com sinais de
+							alarme</label>
+					</div>
+					<div class="grid grid-cols-3 border-r border-l border-b border-gray-900 rounded-b-md px-2">
+						<!-- Campo - Sinais Clínicos Grave - Caixa - Hipotensão postural e/ou lipotímia -->
+						<div class="flex flex-row items-center justify-start gap-1">
+							<input type="checkbox" value="dados-clinicos-graves-sinais-alarme-hopotensao"
+								id="dados-clinicos-graves-sinais-alarme-hopotensao"
+								name="dados-clinicos-graves-sinais-alarme-hopotensao">
+							<label for="dados-clinicos-graves-sinais-alarme-hopotensao">Hipotensão postural e/ou lipotímia</label>
+						</div>
+						<!-- Campo - Sinais Clínicos Grave - Caixa - Queda abrupta de plaquetas -->
+						<div class="flex flex-row items-center justify-start gap-1">
+							<input type="checkbox" value="dados-clinicos-graves-sinais-alarme-queda"
+								id="dados-clinicos-graves-sinais-alarme-queda" name="dados-clinicos-graves-sinais-alarme-queda">
+							<label for="dados-clinicos-graves-sinais-alarme-queda">Queda abrupta de plaquetas</label>
+						</div>
+						<!-- Campo - Sinais Clínicos Grave - Caixa - Vômitos persistentes -->
+						<div class="flex flex-row items-center justify-start gap-1">
+							<input type="checkbox" value="dados-clinicos-graves-sinais-alarme-vomito"
+								id="dados-clinicos-graves-sinais-alarme-vomito" name="dados-clinicos-graves-sinais-alarme-vomito">
+							<label for="dados-clinicos-graves-sinais-alarme-vomito">Vômitos persistentes</label>
+						</div>
+						<!-- Campo - Sinais Clínicos Grave - Caixa - Dor Abdominal -->
+						<div class="flex flex-row items-center justify-start gap-1">
+							<input type="checkbox" value="dados-clinicos-graves-sinais-alarme-dor-abdominal"
+								id="dados-clinicos-graves-sinais-alarme-dor-abdominal"
+								name="dados-clinicos-graves-sinais-alarme-dor-abdominal">
+							<label for="dados-clinicos-graves-sinais-alarme-dor-abdominal">Dor abdominal
+								intensa e contínua</label>
+						</div>
+						<!-- Campo - Sinais Clínicos Grave - Caixa - Letargia ou irritabilidade -->
+						<div class="flex flex-row items-center justify-start gap-1">
+							<input type="checkbox" value="dados-clinicos-graves-sinais-alarme-letargia-ou-irritabilidade"
+								id="dados-clinicos-graves-sinais-alarme-letargia-ou-irritabilidade"
+								name="dados-clinicos-graves-sinais-alarme-letargia-ou-irritabilidade">
+							<label for="dados-clinicos-graves-sinais-alarme-letargia-ou-irritabilidade">Letargia ou
+								irritabilidade</label>
+						</div>
+						<!-- Campo - Sinais Clínicos Grave - Caixa - Sangramento de mucosa/outras
+								hemorragias -->
+						<div class="flex flex-row items-center justify-start gap-1">
+							<input type="checkbox" value="dados-clinicos-graves-sinais-alarme-sangramento-hemorragias"
+								id="dados-clinicos-graves-sinais-alarme-sangramento-hemorragias"
+								name="dados-clinicos-graves-sinais-alarme-sangramento-hemorragias">
+							<label for="dados-clinicos-graves-sinais-alarme-sangramento-hemorragias">Sangramento de mucosa/outras
+								hemorragias</label>
+						</div>
+						<!-- Campo - Sinais Clínicos Grave - Caixa - Aumento progressivo
+								do hematócrito -->
+						<div class="flex flex-row items-center justify-start gap-1">
+							<input type="checkbox" value="dados-clinicos-graves-sinais-alarme-hematocrito"
+								id="dados-clinicos-graves-sinais-alarme-hematocrito"
+								name="dados-clinicos-graves-sinais-alarme-hematocrito">
+							<label for="dados-clinicos-graves-sinais-alarme-hematocrito">Aumento progressivo
+								do hematócrito</label>
+						</div>
+						<!-- Campo - Sinais Clínicos Grave - Caixa - Hepatomegalia -->
+						<div class="flex flex-row items-center justify-start gap-1">
+							<input type="checkbox" value="dados-clinicos-graves-sinais-alarme-hepatomegalia"
+								id="dados-clinicos-graves-sinais-alarme-hepatomegalia"
+								name="dados-clinicos-graves-sinais-alarme-hepatomegalia">
+							<label for="dados-clinicos-graves-sinais-alarme-hepatomegalia">Hepatomegalia >= 2cm</label>
+						</div>
+						<!-- Campo - Sinais Clínicos Grave - Caixa - Acúmulo de líquidos -->
+						<div class="flex flex-row items-center justify-start gap-1">
+							<input type="checkbox" value="dados-clinicos-graves-sinais-alarme-acumulo-liquidos"
+								id="dados-clinicos-graves-sinais-alarme-acumulo-liquidos"
+								name="dados-clinicos-graves-sinais-alarme-acumulo-liquidos">
+							<label for="dados-clinicos-graves-sinais-alarme-acumulo-liquidos">Acúmulo de líquidos</label>
+						</div>
+					</div>
+				</div>
+				<!-- Campo - Data da Notificação -->
+				<div class="flex flex-col gap-1 col-span-2">
+					<div>
+						<span class="border border-gray-900 px-1 text-sm font-semibold">69</span>
+						<label for="dados-clinicos-graves-sinais-data-alarme" class="text-sm font-semibold">Data de início dos
+							sinais de alarme:
+						</label>
+					</div>
+					<input class="border-r border-l border-b border-gray-900 rounded-b-md px-2" type="date"
+						id="dados-clinicos-graves-sinais-data-alarme" name="dados-clinicos-graves-sinais-data-alarme">
+				</div>
+				<!-- Campo - Dengue Grave -->
+				<div class="flex flex-col gap-1 col-span-8">
+					<div>
+						<span class="border border-gray-900 px-1 text-sm font-semibold">70</span>
+						<label for="dados-clinicos-graves-sinais-alarme" class="text-sm font-semibold">Dengue Grave</label>
+					</div>
+					<div class="grid grid-cols-9 border-r border-l border-b border-gray-900 rounded-b-md px-2">
+						<div class="col-span-3">
+							<h2 class="col-span-4 font-bold">Extravasamento grave de plasma:</h2>
+							<!-- Campo - Sinais Clínicos Grave - Caixa - Pulso débil ou indetectável -->
+							<div class="flex flex-row items-center justify-start gap-1">
+								<input type="checkbox" value="dados-clinicos-graves-plasma-pulso-debil-indetectavel"
+									id="dados-clinicos-graves-plasma-pulso-debil-indetectavel"
+									name="dados-clinicos-graves-plasma-pulso-debil-indetectavel">
+								<label for="dados-clinicos-graves-plasma-pulso-debil-indetectavel">Pulso débil ou indetectável</label>
+							</div>
+							<!-- Campo - Sinais Clínicos Grave - Caixa - PA convergente <= 20 mmHg -->
+							<div class="flex flex-row items-center justify-start gap-1">
+								<input type="checkbox" value="dados-clinicos-graves-plasma-pa-convergente"
+									id="dados-clinicos-graves-plasma-pa-convergente" name="dados-clinicos-graves-plasma-pa-convergente">
+								<label for="dados-clinicos-graves-plasma-pa-convergente">PA convergente <= 20 mmHg</label>
+							</div>
+							<!-- Campo - Sinais Clínicos Grave - Caixa - Tempo de enchimento capilar -->
+							<div class="flex flex-row items-center justify-start gap-1">
+								<input type="checkbox" value="dados-clinicos-graves-plasma-tempo-enchimento-capilar"
+									id="dados-clinicos-graves-plasma-tempo-enchimento-capilar"
+									name="dados-clinicos-graves-plasma-tempo-enchimento-capilar">
+								<label for="dados-clinicos-graves-plasma-tempo-enchimento-capilar">Tempo de enchimento capilar</label>
+							</div>
+							<!-- Campo - Sinais Clínicos Grave - Acúmulo de líquidos com insuficiência respiratória -->
+							<div class="flex flex-row items-center justify-start gap-1">
+								<input type="checkbox" value="dados-clinicos-graves-plasma-insuficiencia-respiratoria"
+									id="dados-clinicos-graves-plasma-insuficiencia-respiratoria"
+									name="dados-clinicos-graves-plasma-insuficiencia-respiratoria">
+								<label for="dados-clinicos-graves-plasma-insuficiencia-respiratoria">Acúmulo de líquidos com
+									insuficiência respiratória</label>
+							</div>
+							<!-- Campo - Sinais Clínicos Grave - Caixa - Taquicardia -->
+							<div class="flex flex-row items-center justify-start gap-1">
+								<input type="checkbox" value="dados-clinicos-graves-plasma-sinais-alarme-taquicardia"
+									id="dados-clinicos-graves-plasma-sinais-alarme-taquicardia"
+									name="dados-clinicos-graves-plasma-sinais-alarme-taquicardia">
+								<label for="dados-clinicos-graves-plasma-sinais-alarme-taquicardia">Taquicardia</label>
+							</div>
+							<!-- Campo - Sinais Clínicos Grave - Caixa - Extremidades frias -->
+							<div class="flex flex-row items-center justify-start gap-1">
+								<input type="checkbox" value="dados-clinicos-graves-plasma-extramidades-frias"
+									id="dados-clinicos-graves-plasma-extramidades-frias"
+									name="dados-clinicos-graves-plasma-extramidades-frias">
+								<label for="dados-clinicos-graves-plasma-extramidades-frias">Extremidades frias</label>
+							</div>
+							<!-- Campo - Sinais Clínicos Grave - Caixa - Hipotensão arterial em fase tardia -->
+							<div class="flex flex-row items-center justify-start gap-1">
+								<input type="checkbox" value="dados-clinicos-graves-plasma-hipotensao-arterial"
+									id="dados-clinicos-graves-plasma-hipotensao-arterial"
+									name="dados-clinicos-graves-plasma-hipotensao-arterial">
+								<label for="dados-clinicos-graves-plasma-hipotensao-arterial">Hipotensão arterial em fase tardia</label>
+							</div>
+						</div>
+						<div class="col-span-3">
+							<h2 class="col-span-4 font-bold">Sangramento grave:</h2>
+							<!-- Campo - Sinais Clínicos Grave - Caixa - Hematêmese -->
+							<div class="flex flex-row items-center justify-start gap-1">
+								<input type="checkbox" value="dados-clinicos-graves-sangramento-hematemese"
+									id="dados-clinicos-graves-sangramento-hematemese" name="dados-clinicos-graves-sangramento-hematemese">
+								<label for="dados-clinicos-graves-sangramento-hematemese">Hematêmese</label>
+							</div>
+							<!-- Campo - Sinais Clínicos Grave - Caixa - Melena -->
+							<div class="flex flex-row items-center justify-start gap-1">
+								<input type="checkbox" value="dados-clinicos-graves-sangramento-melena"
+									id="dados-clinicos-graves-sangramento-melena" name="dados-clinicos-graves-sangramento-melena">
+								<label for="dados-clinicos-graves-sangramento-melena">Melena</label>
+							</div>
+							<!-- Campo - Sinais Clínicos Grave - Caixa - Metrorragia volumosa -->
+							<div class="flex flex-row items-center justify-start gap-1">
+								<input type="checkbox" value="dados-clinicos-graves-sangramento-metrorragia"
+									id="dados-clinicos-graves-sangramento-metrorragia"
+									name="dados-clinicos-graves-sangramento-metrorragia">
+								<label for="dados-clinicos-graves-sangramento-metrorragia">Metrorragia volumosa</label>
+							</div>
+							<!-- Campo - Sinais Clínicos Grave - Caixa - Sangramento do SNC -->
+							<div class="flex flex-row items-center justify-start gap-1">
+								<input type="checkbox" value="dados-clinicos-graves-sangramento-snc"
+									id="dados-clinicos-graves-sangramento-snc" name="dados-clinicos-graves-sangramento-snc">
+								<label for="dados-clinicos-graves-sangramento-snc">Sangramento do SNC</label>
+							</div>
+						</div>
+						<div class="col-span-3">
+							<h2 class="col-span-4 font-bold">Compromentimento grave de órgãos:</h2>
+							<!-- Campo - Sinais Clínicos Grave - Caixa - AST/ALT > 1.000 -->
+							<div class="flex flex-row items-center justify-start gap-1">
+								<input type="checkbox" value="dados-clinicos-graves-orgaos-ast-alt"
+									id="dados-clinicos-graves-orgaos-ast-alt" name="dados-clinicos-graves-orgaos-ast-alt">
+								<label for="dados-clinicos-graves-orgaos-ast-alt">AST/ALT > 1.000</label>
+							</div>
+							<!-- Campo - Sinais Clínicos Grave - Caixa - Miocardite -->
+							<div class="flex flex-row items-center justify-start gap-1">
+								<input type="checkbox" value="dados-clinicos-graves-orgaos-miocardite"
+									id="dados-clinicos-graves-orgaos-miocardite" name="dados-clinicos-graves-orgaos-miocardite">
+								<label for="dados-clinicos-graves-orgaos-miocardite">Miocardite</label>
+							</div>
+							<!-- Campo - Sinais Clínicos Grave - Caixa - Alteração da consciência -->
+							<div class="flex flex-row items-center justify-start gap-1">
+								<input type="checkbox" value="dados-clinicos-graves-orgaos-alteracao-consciencia"
+									id="dados-clinicos-graves-orgaos-alteracao-consciencia"
+									name="dados-clinicos-graves-orgaos-alteracao-consciencia">
+								<label for="dados-clinicos-graves-orgaos-alteracao-consciencia">Vômitos persistentes</label>
+							</div>
+							<!-- Campo - Sinais Clínicos Grave - Caixa - Outros órgãos, especificar: -->
+							<div class="flex flex-row items-center justify-start gap-1">
+								<label for="dados-clinicos-graves-sinais-alarme-orgaos-outro">Outros órgãos, especificar:</label>
+								<input class="px-2" type="text" id="dados-clinicos-graves-sinais-alarme-orgaos-outro"
+									name="dados-clinicos-graves-sinais-alarme-orgaos-outro">
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="flex flex-col gap-1 col-span-2">
+					<div>
+						<span class="border border-gray-900 px-1 text-sm font-semibold">71</span>
+						<label for="dados-clinicos-graves-data-inicio-gravidade" class="text-sm font-semibold">Data de início dos
+							sinais de gravidade:</label>
+					</div>
+					<input class="border-r border-l border-b border-gray-900 rounded-b-md px-2" type="date"
+						id="dados-clinicos-graves-data-inicio-gravidade" name="dados-clinicos-graves-data-inicio-gravidade">
+				</div>
+			</div>
+			<h2 class="col-span-10 font-bold">Informações complementares e observações</h2>
+			<!-- Observações Adicionais -->
+			<div class="flex flex-col gap-1 col-span-10">
+				<div>
+					<span class="border border-transparent px-1 text-sm font-semibold"></span>
+					<label for="observacoes-adicionais" class="text-sm font-semibold">Observações Adicionais</label>
+				</div>
+				<textarea class="border border-gray-900 rounded-md px-2" id="observacoes-adicionais"
+					name="observacoes-adicionais" rows="5"></textarea>
+			</div>
+			<!-- Investigador -->
+			<div class="grid grid-cols-10 gap-x-1 gap-y-2">
+				<!-- Campo - Município/Unidade de Saúde -->
+				<div class="flex flex-col gap-1 col-span-6">
+					<div>
+						<span class="border border-transparent px-1 text-sm font-semibold"></span>
+						<label for="investigador-municipio" class="text-sm font-semibold">Município/Unidade de Saúde</label>
+					</div>
+					<input class="border-r border-l border-b border-gray-900 rounded-b-md px-2" type="text"
+						id="investigador-municipio" name="investigador-municipio">
+				</div>
+				<!-- Campo - Cód. da Unid. de Saúde -->
+				<div class="flex flex-col gap-1 col-span-4">
+					<div>
+						<span class="border border-transparent px-1 text-sm font-semibold"></span>
+						<label for="investigador-codigo-unidade" class="text-sm font-semibold">Códido da Unidade de Saúde</label>
+					</div>
+					<input class="border-r border-l border-b border-gray-900 rounded-b-md px-2" type="text"
+						id="investigador-codigo-unidade" name="investigador-codigo-unidade">
+				</div>
+				<!-- Campo - Nome -->
+				<div class="flex flex-col gap-1 col-span-4">
+					<div>
+						<span class="border border-transparent px-1 text-sm font-semibold"></span>
+						<label for="investigador-nome" class="text-sm font-semibold">Nome</label>
+					</div>
+					<input class="border-r border-l border-b border-gray-900 rounded-b-md px-2" type="text" id="investigador-nome"
+						name="investigador-nome">
+				</div>
+				<!-- Campo - Função -->
+				<div class="flex flex-col gap-1 col-span-3">
+					<div>
+						<span class="border border-transparent px-1 text-sm font-semibold"></span>
+						<label for="investigador-funcao" class="text-sm font-semibold">Função</label>
+					</div>
+					<input class="border-r border-l border-b border-gray-900 rounded-b-md px-2" type="text"
+						id="investigador-funcao" name="investigador-funcao">
+				</div>
+				<!-- Campo - Assinatura -->
+				<div class="flex flex-col gap-1 col-span-3">
+					<div>
+						<span class="border border-transparent px-1 text-sm font-semibold"></span>
+						<label for="investigador-assinatura" class="text-sm font-semibold">Assinatura</label>
+					</div>
+					<input class="border-r border-l border-b border-gray-900 rounded-b-md px-2" type="text"
+						id="investigador-assinatura" name="investigador-assinatura">
+				</div>
+			</div>
+		</form>
+	</div>
+</body>
+</html>
